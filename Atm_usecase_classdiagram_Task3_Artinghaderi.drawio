@@ -1,0 +1,135 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT" pages="2">
+  <diagram id="p0" name="use case include extend">
+    <mxGraphModel grid="1" page="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=14;labelBackgroundColor=none;" value="مشتری" vertex="1">
+          <mxGeometry height="140" width="80" x="30" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="bank" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=14;labelBackgroundColor=none;" value="سیستم بانکی" vertex="1">
+          <mxGeometry height="160" width="90" x="1050" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="sys" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;verticalAlign=top;align=left;spacingTop=10;fontSize=17;labelBackgroundColor=none;" value="عابر بانک" vertex="1">
+          <mxGeometry height="700" width="850" x="140" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="withdraw" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;labelBackgroundColor=none;" value="برداشت پول" vertex="1">
+          <mxGeometry height="55" width="180" x="235" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="transfer" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;labelBackgroundColor=none;" value="انتقال پول" vertex="1">
+          <mxGeometry height="55" width="180" x="180" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="receipt" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;labelBackgroundColor=none;" value="چاپ رسید" vertex="1">
+          <mxGeometry height="55" width="180" x="600" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="validate" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;labelBackgroundColor=none;" value="موجودیت مقدار پول" vertex="1">
+          <mxGeometry height="55" width="230" x="545" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="actor" style="endArrow=none;html=1;strokeWidth=1.3;labelBackgroundColor=none;fontColor=default;" target="withdraw" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="actor" style="endArrow=none;html=1;strokeWidth=1.3;labelBackgroundColor=none;fontColor=default;" target="transfer" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="bank" style="endArrow=none;html=1;strokeWidth=1.3;labelBackgroundColor=none;fontColor=default;" target="validate" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i6" edge="1" parent="1" source="withdraw" style="dashed=1;endArrow=open;endFill=0;html=1;fontSize=12;labelBackgroundColor=none;fontColor=default;" target="validate" value="include">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i8" edge="1" parent="1" source="transfer" style="dashed=1;endArrow=open;endFill=0;html=1;fontSize=12;labelBackgroundColor=none;fontColor=default;" target="validate" value="include">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x1" edge="1" parent="1" source="receipt" style="dashed=1;endArrow=open;endFill=0;html=1;fontSize=12;labelBackgroundColor=none;fontColor=default;" target="withdraw" value="extend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4" edge="1" parent="1" source="receipt" style="dashed=1;endArrow=open;endFill=0;html=1;fontSize=12;labelBackgroundColor=none;fontColor=default;" target="transfer" value="extend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="p1" name="ClassDiagramAtm">
+    <mxGraphModel dx="1585" dy="865" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="atm" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;ATM&lt;hr&gt;- atmId: String&lt;br&gt;&lt;hr&gt;+ startSession()&lt;br&gt;+ Transaction()" vertex="1">
+          <mxGeometry height="160" width="210" x="35" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="reader" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;swimlaneFillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;CardReader&lt;hr&gt;- status: Boolean&lt;hr&gt;+ readCard()&lt;br&gt;+ ejectCard()" vertex="1">
+          <mxGeometry height="115" width="185" x="35" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="screen" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;swimlaneFillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;Screen&lt;hr&gt;- isOn: Boolean&lt;hr&gt;+ displayMessage()&lt;br&gt;+ getInput()" vertex="1">
+          <mxGeometry height="115" width="185" x="285" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="keypad" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;swimlaneFillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;Keypad&lt;hr&gt;- layout: String&lt;hr&gt;+ getPIN()&lt;br&gt;+ getSelection()" vertex="1">
+          <mxGeometry height="115" width="185" x="535" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cash" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;swimlaneFillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;CashDispenser&lt;hr&gt;- cashAvailable: Double&lt;hr&gt;+ GiveCash()&lt;br&gt;+ checkCash()" vertex="1">
+          <mxGeometry height="115" width="205" x="785" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="slot" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;swimlaneFillColor=#ffffff;strokeColor=#82b366;fontSize=12;" value="DepositSlot&lt;hr&gt;- acceptsDeposits: Boolean&lt;hr&gt;+ acceptDeposit()" vertex="1">
+          <mxGeometry height="115" width="205" x="785" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="server" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;swimlaneFillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" value="BankServer&lt;hr&gt;- endpoint: String&lt;hr&gt;+ validatePIN()&lt;br&gt;+ authorize()&lt;br&gt;+ updateAccount()" vertex="1">
+          <mxGeometry height="135" width="215" x="320" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="customer" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" value="Customer&lt;hr&gt;- customerId: String&lt;br&gt;- name: String&lt;hr&gt;+ selectTransaction()" vertex="1">
+          <mxGeometry height="115" width="185" x="60" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="card" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" value="Card&lt;hr&gt;- cardNumber: String&lt;br&gt;- expiryDate: Date&lt;hr&gt;+ validate()" vertex="1">
+          <mxGeometry height="115" width="185" x="35" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="account" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;Account&lt;hr&gt;- accountNo: String&lt;br&gt;- balance: Double&lt;hr&gt;+ debit()&lt;br&gt;+ credit()&lt;br&gt;+ getBalance()" vertex="1">
+          <mxGeometry height="125" width="200" x="530" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="txn" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;swimlaneFillColor=#ffffff;strokeColor=#d79b00;fontSize=12;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;Transaction&amp;nbsp;&lt;hr&gt;- transactionId: String&lt;br&gt;- dateTime: DateTime&lt;br&gt;&lt;hr&gt;+ execute()&lt;br&gt;+ printReceipt()" vertex="1">
+          <mxGeometry height="135" width="230" x="790" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="wd" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" value="Withdrawal&lt;hr&gt;- amount: Double&lt;hr&gt;+ execute()" vertex="1">
+          <mxGeometry height="100" width="175" x="770" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="dep" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;resizeParent=1;collapsible=0;whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;swimlaneFillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" value="Deposit&lt;hr&gt;- amount: Double&lt;hr&gt;+ execute()" vertex="1">
+          <mxGeometry height="100" width="175" x="990" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" source="atm" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="reader" value="1 : 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" source="atm" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="screen" value="1 : 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" edge="1" parent="1" source="atm" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="keypad" value="1 : 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" edge="1" parent="1" source="atm" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="cash" value="1 : 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" edge="1" parent="1" source="atm" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="slot" value="1 : 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" edge="1" parent="1" source="atm" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="server" value="connects">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" edge="1" parent="1" source="customer" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="card" value="1 : 1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r8" edge="1" parent="1" source="customer" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="account" value="1 : 1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r9" edge="1" parent="1" source="server" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="account" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r10" edge="1" parent="1" source="atm" style="endArrow=none;html=1;strokeWidth=1.2;fontSize=11;" target="txn" value="1 : 0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r11" edge="1" parent="1" source="wd" style="endArrow=block;endFill=0;html=1;fontSize=11;" target="txn" value="inherit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r12" edge="1" parent="1" source="dep" style="endArrow=block;endFill=0;html=1;fontSize=11;" target="txn" value="inherit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
